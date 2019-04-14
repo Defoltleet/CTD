@@ -17,98 +17,11 @@ namespace CalculatorToCode
             Console.WriteLine("В какую степень перевести?");
             Console.Write("Степень: ");
             int step = Int32.Parse(Console.ReadLine());
+	    const String chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             while (desNum > step)
             {
                 int ostat = desNum % step;
-                if (ostat > 9)
-                {
-                    ostat = Convert.ToChar(ostat);
-                    str.Push((char)ostat); 
-                    /*
-                    switch (ostat)
-                    {
-                        case 10:
-                            str.Push('A');
-                            break;
-                        case 11:
-                            str.Push('B');
-                            break;
-                        case 12:
-                            str.Push('C');
-                            break;
-                        case 13:
-                            str.Push('D');
-                            break;
-                        case 14:
-                            str.Push('E');
-                            break;
-                        case 15:
-                            str.Push('F');
-                            break;
-                        case 16:
-                            str.Push('G');
-                            break;
-                        case 17:
-                            str.Push('H');
-                            break;
-                        case 18:
-                            str.Push('I');
-                            break;
-                        case 19:
-                            str.Push('J');
-                            break;
-                        case 20:
-                            str.Push('K');
-                            break;
-                        case 21:
-                            str.Push('L');
-                            break;
-                        case 22:
-                            str.Push('M');
-                            break;
-                        case 23:
-                            str.Push('N');
-                            break;
-                        case 24:
-                            str.Push('O');
-                            break;
-                        case 25:
-                            str.Push('P');
-                            break;
-                        case 26:
-                            str.Push('Q');
-                            break;
-                        case 27:
-                            str.Push('R');
-                            break;
-                        case 28:
-                            str.Push('S');
-                            break;
-                        case 29:
-                            str.Push('T');
-                            break;
-                        case 30:
-                            str.Push('U');
-                            break;
-                        case 31:
-                            str.Push('V');
-                            break;
-                        case 32:
-                            str.Push('W');
-                            break;
-                        case 33:
-                            str.Push('X');
-                            break;
-                        case 34:
-                            str.Push('Y');
-                            break;
-                        case 35:
-                            str.Push('Z');
-                            break;
-                    }
-                  */
-                }
-                else str.Push((char)ostat);
+		str.Push(chars[ostat]);
                 desNum /= step;
             }
             while (str.Count != 0) Console.Write(str.Pop());
